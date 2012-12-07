@@ -1,0 +1,173 @@
+<head>
+    <link type="text/css" href="slow-scroll.css" rel="stylesheet"/>
+</head>
+<script src="http://code.jquery.com/jquery-1.7.1.js"></script>
+<script src="slow-scroll.js"></script>
+
+<style>
+    html, body{
+        overflow: hidden;
+        min-height: 0px;
+    }
+    .top, .bottom, .center{
+        position: absolute;
+    }
+    .top{
+        top: 0px;
+    }
+    .bottom{
+        bottom: 0px;
+    }
+    .center{
+        height: 800px; overflow: hidden;
+        top:0px;
+        left:0px;
+        position: relative;
+        width: 200px;
+
+    }
+    .internal{
+        position: relative;
+        overflow: hidden;
+        height: 200px;
+    }
+
+    .wrap{
+        width: 300px;
+        border: 1px solid gray;
+    }
+
+</style>
+<div >
+    <br>
+    <span id="log">loggingn</span>
+    <div class="top clicked">top
+    </div>
+    <br><br><br>
+
+    <div class="center">
+        <div class="wrap">
+
+            tetete
+            <input type="text">
+            <input type="text">
+            center<br>
+
+            <div class='internal' style="width: 120px; background: gray; position: absolute;">
+                -----------------------------------------------------------------
+                center 1<br>
+                center<br>
+                center<br>
+                center 2<br>
+                center<br>
+                center<br>
+                center<br>
+                center 4<br>
+                center<br>
+                center<br>
+                center<br>
+                center 5<br>
+                center<br>
+                center<br>
+                center<br>
+                center<br>
+                _center 5<br>
+                _center 5<br>
+                _center 5<br>
+                _center 5<br>
+                center<br>
+                _center 7<br>
+                -------------
+            </div>
+            center 6<br>
+            center<br>
+            center<br>
+            center<br>
+            center 7<br>
+            center<br>
+            center<br>
+            center<br>
+            center<br>
+            123<br>
+            center<br>
+            center<br>
+            center<br>
+            center 8<br>
+            center<br>
+            center<br>
+            center<br>
+            center 9<br>
+            center<br>
+            center<br>
+            center<br>
+            center<br>
+            center<br>
+            center 12 1<br>
+            center<br>
+            center<br>
+            center<br>
+            center<br>
+            center123 <br>
+            center<br>
+            center<br>
+            cente sdfr<br>
+            center<br>
+            center<br>
+            <br><br><br><br><br>
+            center<br>
+            center<br>
+            center<br>
+            center<br>
+            center<br>
+            center<br>
+            center<br>
+            center<br>
+            center<br>
+            center<br>
+            center<br>
+            <br><br><br><br><br>
+            center<br>
+            center<br>
+            center<br>
+            center<br>
+            center<br>
+            center<br>
+            center<br>
+            center<br>
+            <input type="text"><br>
+            center<br>
+        </div>
+    </div>
+    <div class="bottom clicked">
+        bottom
+        <input type="text">
+    </div>
+</div>
+        <script>
+            $().ready(function(){
+                var bottom = $(".bottom"),
+                    top = $(".top"),
+                    $doc = $(document),
+                    scrolled = false,
+                    $win = $(window);
+                var scroll = new slowScroll($(".center"), { useWrap:false, log: $("#log"),
+                    horizontal: false,
+                    onTouchStart: function(){
+                        $(".top").text("onTouchStart");
+                    },
+                    onBeforeScrollMove: function(){
+                        $(".top").text("onBeforeScrollMove");
+                    },
+                    onTouchEnd: function(){
+                        $(".top").text("onTouchEnd");
+                    }
+                });
+
+                var sc2 = new slowScroll($(".internal"), {useWrap: false});
+
+                setTimeout(function(){
+                    //scroll.scrollTo(10,10);
+                }, 2000);
+            });
+        </script>
+
