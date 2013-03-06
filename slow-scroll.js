@@ -1,5 +1,7 @@
 /**
- * jQuery Simple Grid
+ * slowScroll
+ * https://github.com/dudiq/slowScroll
+ *
  * @version: 0.1 - 2012.07.30
  * @author: dudiq
  * @licence: MIT http://www.opensource.org/licenses/mit-license.php
