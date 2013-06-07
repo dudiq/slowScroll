@@ -98,7 +98,7 @@
                 canCallOnMove = true;
             }
             if (canCallOnMove){
-                libObject["onMove"].call(libObject, ev);
+                libObject && libObject["onMove"].call(libObject, ev);
                 ev.preventDefault();
             }
         });
